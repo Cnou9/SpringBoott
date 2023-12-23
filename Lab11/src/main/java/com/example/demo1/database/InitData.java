@@ -15,7 +15,7 @@ public class InitData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        BookDB.bookList = jsonFileReader.readFile("C:\\SpringBoot\\Lab11\\MOCK_DATA.json");
+        BookDB.bookList = jsonFileReader.readFile("MOCK_DATA.json");
         System.out.println("Book size : " + BookDB.bookList.size());
     }
 

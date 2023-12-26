@@ -3,6 +3,7 @@ package com.example.demo1.utils;
 import com.example.demo1.model.Book;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+@Primary
 @Component("ExcelFileReader")
 @Slf4j
 public class ExcelFileReader implements IFileReader {

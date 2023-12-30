@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Detail</title>
+    <link rel="stylesheet" href="/css/style.css"> <!-- Liên kết đến tệp CSS -->
+</head>
+
+<body class="body-detail">
+<div class="container-detail">
+
+    <h1 class="detail-title">Car Detail</h1>
+    <div class="car-detail-container" th:each="car : ${cars}">
+        <div class="car-detail-thumbnail-container">
+            <img th:src="${car.thumbnail}" alt="Car Thumbnail" class="car-detail-thumbnail" />
+        </div>
+        <div class="car-detail-card">
+
+            <div class="car-detail-label">Name:</div>
+            <div class="car-detail-value" th:text="${car.name}"></div>
+
+            <div class="car-detail-label">Description:</div>
+            <div class="car-detail-value" th:text="${car.description}"></div>
+
+            <div class="car-detail-label">Price:</div>
+            <div class="car-detail-value" th:text="${car.price}"></div>
+
+            <div class="car-detail-label">Rating:</div>
+            <div class="car-detail-value" th:text="${car.rating}"></div>
+
+            <div th:if="${car.priceDiscount != null}">
+                <div class="car-detail-label">Discounted Price:</div>
+                <div class="car-detail-value" th:text="${car.priceDiscount}"></div>
+            </div>
+
+            <div class="back-button-container">
+                <a href="/car-list" class="back-button">Back to Car List</a>
+            </div>
+

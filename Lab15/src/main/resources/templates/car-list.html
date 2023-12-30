@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Liên kết đến tệp CSS -->
+</head>
+
+<body class="body-list">
+
+<div class="container-list">
+    <h1 class="h1-list">Car List</h1>
+    <div class="car-grid">
+        <!-- Loop through cars and display them as cards -->
+        <div th:each="car : ${cars}" class="car-card">
+            <img th:src="${car.thumbnail}" alt="Car Thumbnail" class="car-thumbnail" />
+            <div class="car-details">
+                <p th:text="${car.name}"></p>
+                <p th:text="'Rating: ' + ${car.rating}"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

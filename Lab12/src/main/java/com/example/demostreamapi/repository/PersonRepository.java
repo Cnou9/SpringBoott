@@ -128,6 +128,7 @@ public class PersonRepository implements PersonsitoryInterface{
                 .collect(Collectors.groupingBy(Person::getCity));
     }
 
+
     @Override
     public List inSalaryRange(int start, int end) {
         return PersonDB.personList.stream()
@@ -164,4 +165,14 @@ public class PersonRepository implements PersonsitoryInterface{
                 .filter(person -> currentYear - person.getBirthday().getYear() >= start && currentYear - person.getBirthday().getYear() <= end)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Map<String, Long> jobCounts() {
+        return PersonDB.personList.stream()
+                .collect(Collectors.groupingBy(Person::getJob, Collectors.counting()));
+
+    }
+
+
+
 }

@@ -12,7 +12,7 @@ class DemoStreamApiApplicationTests {
 
     @Test
     void test() {
-        personRepository.printListPeople(personRepository.top5HighestPaid());
+        personRepository.printListPeople(personRepository.inAgeRange(20,30));
     }
 
 }

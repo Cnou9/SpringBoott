@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh sách tất cả người</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Danh sách thành phố</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Tên thành phố</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="city , state: ${cities}" th:classappend="${state.odd ? 'highlight' : ''}">
+        <td th:text="${city}"></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

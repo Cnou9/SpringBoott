@@ -47,6 +47,8 @@ public interface PersonsitoryInterface {
     List  top5HighestPaid(); // Lấy danh sách 5 người có mức lương cao nhất
 
     List  inAgeRange(int start, int end) ;// Liệt kê danh sách những người có tuổi trong khoảng được chỉ định start -> end
+
+    Map<String ,Long> jobCounts() ;
 }
 
 

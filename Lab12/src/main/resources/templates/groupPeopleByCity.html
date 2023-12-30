@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group People by City</title>
+</head>
+<body>
+<h1>Group People by City</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Thành phố</th>
+        <th>Người</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="city : ${peopleByCity}">
+        <td th:text="${city.key}">City</td>
+        <td>
+            <ul>
+                <li th:each="person : ${city.value}" th:text="${person.fullname}">Name</li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

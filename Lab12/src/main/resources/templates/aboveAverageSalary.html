@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Above Average Salary</title>
+</head>
+<body>
+<h1>Above Average Salary</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Họ và Tên</th>
+        <th>Lương</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${aboveAverageSalaryPeople}">
+        <td th:text="${person.id}"></td>
+        <td th:text="${person.fullname}"></td>
+        <td th:text="${person.salary}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh sách tất cả người</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Danh sách tất cả người theo tên</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Họ và tên</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person, state : ${longestName}" th:classappend="${state.odd ? 'highlight' : ''}">
+        <td th:text="${longestName.fullname}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
